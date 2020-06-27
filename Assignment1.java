@@ -93,23 +93,22 @@ public class Assignment1{
 	  File file = new File(filename);
 	  Scanner in = new Scanner(file);
 	  
-//	  try {
-//		
-//		while(in.hasNext()) {
-//			System.out.println(in.nextLine());
-//		}
-//		//in.close();
-//  }
-//	  catch (Exception e) {
-//		  System.out.println("File cannot be read!");
-//	  }
+	  try {
+		
+		while(in.hasNext()) {
+			System.out.println(in.nextLine());
+		}
+		//in.close();
+  }
+	  catch (Exception e) {
+		  System.out.println("File cannot be read!");
+	  }
 	  
 	  int[][] A = new int[n][n];
 	  
-	while(in.hasNext()){
-		System.out.println(in.nextLine());
-		
-		for(int i=0; i < A.length; i++) {
+	  while(true) {
+	  
+	  for(int i=0; i < A.length; i++) {
 		  
 		  String[] row = in.nextLine().trim().split(" ");
 		  
@@ -119,10 +118,12 @@ public class Assignment1{
 		  }
 		  i++;
 	  }
-	 }
 	return A;
 	  
 	 }
+  
+
+  }
   
   
 }
