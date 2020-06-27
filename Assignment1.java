@@ -90,8 +90,33 @@ public class Assignment1{
   
   public int[][] readMatrix(String filename, int n) throws Exception
   {
-	  int A[][] = new int[n][n];
-	  return A;
+	  File file = new File(filename);
+	  Scanner in = new Scanner(file);
+	  
+	  try {
+		
+		while(in.hasNext()) {
+			System.out.println(in.nextLine());
+		}
+		in.close();
+  }
+	  catch (Exception e) {
+		  System.out.println("File cannot be read!");
+	  }
+	  
+	  int[][] A = new int[n][n];
+	  
+	  for(int i=0; i < A.length; i++) {
+		  
+		  String[] row = in.nextLine().trim().split(" ");
+		  
+		  for(int j=0; i < A[i].length; j++) {
+			  A[i][j] = Integer.parseInt(row[j]);
+		  }
+	  }
+	return A;
+	  
+	 }
   }
   
 }
