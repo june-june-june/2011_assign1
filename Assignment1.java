@@ -90,40 +90,43 @@ public class Assignment1{
   
   public int[][] readMatrix(String filename, int n) throws Exception
   {
-	  File file = new File(filename);
-	  Scanner in = new Scanner(file);
 	  
-	  try {
-		
-		while(in.hasNext()) {
-			System.out.println(in.nextLine());
-		}
-		//in.close();
-  }
-	  catch (Exception e) {
-		  System.out.println("File cannot be read!");
-	  }
-	  
+	  /*File file = new File(filename);
+	  BufferedReader br = new BufferedReader(new FileReader(file));
+	  String str;
 	  int[][] A = new int[n][n];
 	  
-	  while(true) {
-	  
-	  for(int i=0; i < A.length; i++) {
-		  
-		  String[] row = in.nextLine().trim().split(" ");
-		  
-		  for(int j=0; j < A[i].length; j++) {
-			  
-			  A[i][j] = Integer.parseInt(row[j]);
-		  }
-		  i++;
+	  try {
+	  	while((str = br.readLine()) != null) {
+	  		for(int i=0; i < A.length; i++) {
+	  		  for(int j=0; j < A[i].length; j++) {  			  
+	  			  A[i][j] = br.read();
+	  		  }
+	  		}
+	  	}
+	  } catch (Exception e) {
+		  System.out.println("File cannot be read!");
 	  }
-	return A;
+	    
+	  return A;*/
 	  
-	 }
-  
-
+	  File file = new File(filename);
+	  Scanner in = new Scanner(file);
+	  int[][] A = new int[n][n];
+	  
+	  try {		
+		  while(in.hasNext()) {
+			  for(int i=0; i < A.length; i++) {				  
+				  String[] row = in.nextLine().trim().split(" ");				  
+				  for(int j=0; j < A[i].length; j++) {					  
+					  A[i][j] = Integer.parseInt(row[j]);
+				  }
+			  }
+		  }
+	  }
+	  catch (Exception e) {
+		  System.out.println("File cannot be read!");
+	  }	  
+	return A;
   }
-  
-  
 }
