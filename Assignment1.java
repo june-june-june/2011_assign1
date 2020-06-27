@@ -21,12 +21,40 @@ public class Assignment1{
   
   public int[][] sum(int[][] A, int[][] B, int x1, int y1, int x2, int y2, int n)
   {
-	  return A;
+	  int[][] C = new int[n][n];
+	  int ay = y1;
+	  int by = y2;
+	  for (int i = 0; i < n; i++) {
+		  ay = y1;
+		  by = y2;
+		  for (int j = 0; j < n; j++) {
+			  C[i][j] = A[x1][ay] + B[x2][by];
+			  ay++;
+			  by++;
+		  }
+		  x1++;
+		  x2++;
+	  }
+	  return C;
   }
   
   public int[][] sub(int[][] A, int[][] B, int x1, int y1, int x2, int y2, int n)
   {
-	  return A;
+	  int[][] C = new int[n][n];
+	  int ay = y1;
+	  int by = y2;
+	  for (int i = 0; i < n; i++) {
+		  ay = y1;
+		  by = y2;
+		  for (int j = 0; j < n; j++) {
+			  C[i][j] = A[x1][ay] - B[x2][by];
+			  ay++;
+			  by++;
+		  }
+		  x1++;
+		  x2++;
+	  }
+	  return C;
   }
   
   
