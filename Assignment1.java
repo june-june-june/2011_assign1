@@ -106,6 +106,7 @@ public class Assignment1{
 	  
 	  int[][] A = new int[n][n];
 	  
+	  while(in.hasNext()){
 	  for(int i=0; i < A.length; i++) {
 		  
 		  String[] row = in.nextLine().trim().split(" ");
@@ -113,6 +114,8 @@ public class Assignment1{
 		  for(int j=0; i < A[i].length; j++) {
 			  A[i][j] = Integer.parseInt(row[j]);
 		  }
+		  i++;
+	  	}
 	  }
 	return A;
 	  
